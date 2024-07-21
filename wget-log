@@ -1,0 +1,5 @@
+--2024-04-07 20:24:03--  http://127.0.0.1:9116/snmp?module=baum
+Connecting to 127.0.0.1:9116... connected.
+HTTP request sent, awaiting response... 400 Bad Request
+2024-04-07 20:24:03 ERROR 400: Bad Request.
+

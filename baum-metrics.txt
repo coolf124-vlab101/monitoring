@@ -1,0 +1,1007 @@
+# HELP baumStatsCommonCacheL1Hit L1 cache hit in percent - 1.3.6.1.4.1.91919191.1.3.6.1.1
+# TYPE baumStatsCommonCacheL1Hit counter
+baumStatsCommonCacheL1Hit 47
+# HELP baumStatsCommonCacheL2Hit L2 cache hit in percent - 1.3.6.1.4.1.91919191.1.3.6.1.2
+# TYPE baumStatsCommonCacheL2Hit counter
+baumStatsCommonCacheL2Hit 0
+# HELP baumStatsCommonCacheReadBack Read back of cache (B/s) - 1.3.6.1.4.1.91919191.1.3.6.1.3
+# TYPE baumStatsCommonCacheReadBack counter
+baumStatsCommonCacheReadBack 2.64878672e+08
+# HELP baumStatsCommonCacheWriteBack Write back of cache (B/s) - 1.3.6.1.4.1.91919191.1.3.6.1.4
+# TYPE baumStatsCommonCacheWriteBack counter
+baumStatsCommonCacheWriteBack 2.765205695704e+12
+# HELP baumStatsDisksCount Count of all disks - 1.3.6.1.4.1.91919191.1.3.9.1
+# TYPE baumStatsDisksCount counter
+baumStatsDisksCount 24
+# HELP baumStatsDisksCurrentTemp Current temperature disk - 1.3.6.1.4.1.91919191.1.3.9.2.1.3
+# TYPE baumStatsDisksCurrentTemp counter
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="1"} 25
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="10"} 26
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="11"} 26
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="12"} 36
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="13"} 28
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="14"} 31
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="15"} 26
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="16"} 34
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="17"} 26
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="18"} 32
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="19"} 37
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="2"} 26
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="20"} 28
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="21"} 27
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="22"} 28
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="23"} 32
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="24"} 28
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="3"} 28
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="4"} 25
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="5"} 27
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="6"} 25
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="7"} 33
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="8"} 35
+baumStatsDisksCurrentTemp{baumStatsDisksIndex="9"} 28
+# HELP baumStatsDisksIndex Index of disk - 1.3.6.1.4.1.91919191.1.3.9.2.1.1
+# TYPE baumStatsDisksIndex gauge
+baumStatsDisksIndex{baumStatsDisksIndex="1"} 1
+baumStatsDisksIndex{baumStatsDisksIndex="10"} 10
+baumStatsDisksIndex{baumStatsDisksIndex="11"} 11
+baumStatsDisksIndex{baumStatsDisksIndex="12"} 12
+baumStatsDisksIndex{baumStatsDisksIndex="13"} 13
+baumStatsDisksIndex{baumStatsDisksIndex="14"} 14
+baumStatsDisksIndex{baumStatsDisksIndex="15"} 15
+baumStatsDisksIndex{baumStatsDisksIndex="16"} 16
+baumStatsDisksIndex{baumStatsDisksIndex="17"} 17
+baumStatsDisksIndex{baumStatsDisksIndex="18"} 18
+baumStatsDisksIndex{baumStatsDisksIndex="19"} 19
+baumStatsDisksIndex{baumStatsDisksIndex="2"} 2
+baumStatsDisksIndex{baumStatsDisksIndex="20"} 20
+baumStatsDisksIndex{baumStatsDisksIndex="21"} 21
+baumStatsDisksIndex{baumStatsDisksIndex="22"} 22
+baumStatsDisksIndex{baumStatsDisksIndex="23"} 23
+baumStatsDisksIndex{baumStatsDisksIndex="24"} 24
+baumStatsDisksIndex{baumStatsDisksIndex="3"} 3
+baumStatsDisksIndex{baumStatsDisksIndex="4"} 4
+baumStatsDisksIndex{baumStatsDisksIndex="5"} 5
+baumStatsDisksIndex{baumStatsDisksIndex="6"} 6
+baumStatsDisksIndex{baumStatsDisksIndex="7"} 7
+baumStatsDisksIndex{baumStatsDisksIndex="8"} 8
+baumStatsDisksIndex{baumStatsDisksIndex="9"} 9
+# HELP baumStatsDisksName Name of disk - 1.3.6.1.4.1.91919191.1.3.9.2.1.2
+# TYPE baumStatsDisksName gauge
+baumStatsDisksName{baumStatsDisksIndex="1",baumStatsDisksName="35002538b7350fa70"} 1
+baumStatsDisksName{baumStatsDisksIndex="10",baumStatsDisksName="35002538b7350fa60"} 1
+baumStatsDisksName{baumStatsDisksIndex="11",baumStatsDisksName="35002538b7350ee80"} 1
+baumStatsDisksName{baumStatsDisksIndex="12",baumStatsDisksName="358ce38ee21ef54f9"} 1
+baumStatsDisksName{baumStatsDisksIndex="13",baumStatsDisksName="35002538b7350cf10"} 1
+baumStatsDisksName{baumStatsDisksIndex="14",baumStatsDisksName="35002538b7350cc50"} 1
+baumStatsDisksName{baumStatsDisksIndex="15",baumStatsDisksName="35002538b7350c9b0"} 1
+baumStatsDisksName{baumStatsDisksIndex="16",baumStatsDisksName="358ce38ee21ef550d"} 1
+baumStatsDisksName{baumStatsDisksIndex="17",baumStatsDisksName="35002538b7350fc90"} 1
+baumStatsDisksName{baumStatsDisksIndex="18",baumStatsDisksName="35000c500ef2e4ac3"} 1
+baumStatsDisksName{baumStatsDisksIndex="19",baumStatsDisksName="358ce38ee21ef5511"} 1
+baumStatsDisksName{baumStatsDisksIndex="2",baumStatsDisksName="35002538b7350fa90"} 1
+baumStatsDisksName{baumStatsDisksIndex="20",baumStatsDisksName="35002538b7350fd10"} 1
+baumStatsDisksName{baumStatsDisksIndex="21",baumStatsDisksName="35002538b7350fae0"} 1
+baumStatsDisksName{baumStatsDisksIndex="22",baumStatsDisksName="35002538b7350ee50"} 1
+baumStatsDisksName{baumStatsDisksIndex="23",baumStatsDisksName="35000c500ef2f409b"} 1
+baumStatsDisksName{baumStatsDisksIndex="24",baumStatsDisksName="35002538b7350fa50"} 1
+baumStatsDisksName{baumStatsDisksIndex="3",baumStatsDisksName="35002538b7350eb50"} 1
+baumStatsDisksName{baumStatsDisksIndex="4",baumStatsDisksName="35002538b7350fa40"} 1
+baumStatsDisksName{baumStatsDisksIndex="5",baumStatsDisksName="35002538b7350eb60"} 1
+baumStatsDisksName{baumStatsDisksIndex="6",baumStatsDisksName="35002538b7350f5f0"} 1
+baumStatsDisksName{baumStatsDisksIndex="7",baumStatsDisksName="358ce38ee21ef54f1"} 1
+baumStatsDisksName{baumStatsDisksIndex="8",baumStatsDisksName="358ce38ee21ef5505"} 1
+baumStatsDisksName{baumStatsDisksIndex="9",baumStatsDisksName="35002538b7350fa80"} 1
+# HELP baumStatsDisksThresholdTemp Threshold temperature disk - 1.3.6.1.4.1.91919191.1.3.9.2.1.4
+# TYPE baumStatsDisksThresholdTemp counter
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="1"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="10"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="11"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="12"} 70
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="13"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="14"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="15"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="16"} 70
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="17"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="18"} 60
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="19"} 70
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="2"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="20"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="21"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="22"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="23"} 60
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="24"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="3"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="4"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="5"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="6"} 74
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="7"} 70
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="8"} 70
+baumStatsDisksThresholdTemp{baumStatsDisksIndex="9"} 74
+# HELP baumStatsFCCount Count of FC stats - 1.3.6.1.4.1.91919191.1.3.6.5.1
+# TYPE baumStatsFCCount counter
+baumStatsFCCount 4
+# HELP baumStatsFCIndex Index of FC - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.1
+# TYPE baumStatsFCIndex gauge
+baumStatsFCIndex{baumStatsFCIndex="1"} 1
+baumStatsFCIndex{baumStatsFCIndex="2"} 2
+baumStatsFCIndex{baumStatsFCIndex="3"} 3
+baumStatsFCIndex{baumStatsFCIndex="4"} 4
+# HELP baumStatsFCInitiatorCount Count initiator of FC stats - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.7
+# TYPE baumStatsFCInitiatorCount counter
+baumStatsFCInitiatorCount{baumStatsFCIndex="1"} 0
+baumStatsFCInitiatorCount{baumStatsFCIndex="2"} 0
+baumStatsFCInitiatorCount{baumStatsFCIndex="3"} 0
+baumStatsFCInitiatorCount{baumStatsFCIndex="4"} 0
+# HELP baumStatsFCRead Read speed of FC (B/s) - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.3
+# TYPE baumStatsFCRead counter
+baumStatsFCRead{baumStatsFCIndex="1"} 0
+baumStatsFCRead{baumStatsFCIndex="2"} 0
+baumStatsFCRead{baumStatsFCIndex="3"} 0
+baumStatsFCRead{baumStatsFCIndex="4"} 0
+# HELP baumStatsFCReadIOPS Read speed of FC (IO/s) - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.5
+# TYPE baumStatsFCReadIOPS counter
+baumStatsFCReadIOPS{baumStatsFCIndex="1"} 0
+baumStatsFCReadIOPS{baumStatsFCIndex="2"} 0
+baumStatsFCReadIOPS{baumStatsFCIndex="3"} 0
+baumStatsFCReadIOPS{baumStatsFCIndex="4"} 0
+# HELP baumStatsFCTarget Target of FC - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.2
+# TYPE baumStatsFCTarget gauge
+baumStatsFCTarget{baumStatsFCIndex="1",baumStatsFCTarget="51:40:2e:c0:17:33:8e:08"} 1
+baumStatsFCTarget{baumStatsFCIndex="2",baumStatsFCTarget="51:40:2e:c0:17:33:8e:09"} 1
+baumStatsFCTarget{baumStatsFCIndex="3",baumStatsFCTarget="51:40:2e:c0:17:33:b2:b8"} 1
+baumStatsFCTarget{baumStatsFCIndex="4",baumStatsFCTarget="51:40:2e:c0:17:33:b2:b9"} 1
+# HELP baumStatsFCWrite Write speed of FC (B/s) - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.4
+# TYPE baumStatsFCWrite counter
+baumStatsFCWrite{baumStatsFCIndex="1"} 0
+baumStatsFCWrite{baumStatsFCIndex="2"} 0
+baumStatsFCWrite{baumStatsFCIndex="3"} 0
+baumStatsFCWrite{baumStatsFCIndex="4"} 0
+# HELP baumStatsFCWriteIOPS Write speed of FC (IO/s) - 1.3.6.1.4.1.91919191.1.3.6.5.2.1.6
+# TYPE baumStatsFCWriteIOPS counter
+baumStatsFCWriteIOPS{baumStatsFCIndex="1"} 0
+baumStatsFCWriteIOPS{baumStatsFCIndex="2"} 0
+baumStatsFCWriteIOPS{baumStatsFCIndex="3"} 0
+baumStatsFCWriteIOPS{baumStatsFCIndex="4"} 0
+# HELP baumStatsJbodCoolerCount Count of coolers in a shelf - 1.3.6.1.4.1.91919191.1.3.8.2.1.3
+# TYPE baumStatsJbodCoolerCount counter
+baumStatsJbodCoolerCount{baumStatsJbodIndex="1"} 0
+# HELP baumStatsJbodCount Count of shelves - 1.3.6.1.4.1.91919191.1.3.8.1
+# TYPE baumStatsJbodCount counter
+baumStatsJbodCount 1
+# HELP baumStatsJbodDiskCount Number of disks in a shelf - 1.3.6.1.4.1.91919191.1.3.8.2.1.6
+# TYPE baumStatsJbodDiskCount counter
+baumStatsJbodDiskCount{baumStatsJbodIndex="1"} 24
+# HELP baumStatsJbodIndex Index of shelves - 1.3.6.1.4.1.91919191.1.3.8.2.1.1
+# TYPE baumStatsJbodIndex gauge
+baumStatsJbodIndex{baumStatsJbodIndex="1"} 1
+# HELP baumStatsJbodInternal Internal or external shelf - 1.3.6.1.4.1.91919191.1.3.8.2.1.5
+# TYPE baumStatsJbodInternal counter
+baumStatsJbodInternal{baumStatsJbodIndex="1"} 1
+# HELP baumStatsJbodName Name of shelves - 1.3.6.1.4.1.91919191.1.3.8.2.1.2
+# TYPE baumStatsJbodName gauge
+baumStatsJbodName{baumStatsJbodIndex="1",baumStatsJbodName="HA401 Expander"} 1
+# HELP baumStatsJbodPSUCount Count of psu in a shelf - 1.3.6.1.4.1.91919191.1.3.8.2.1.4
+# TYPE baumStatsJbodPSUCount counter
+baumStatsJbodPSUCount{baumStatsJbodIndex="1"} 0
+# HELP baumStatsNodeAIDCount Count node for used a_id - 1.3.6.1.4.1.91919191.1.3.10.1
+# TYPE baumStatsNodeAIDCount counter
+baumStatsNodeAIDCount 2
+# HELP baumStatsNodeAIDIndex Index of node for used a_id - 1.3.6.1.4.1.91919191.1.3.10.2.1.1
+# TYPE baumStatsNodeAIDIndex gauge
+baumStatsNodeAIDIndex{baumStatsNodeAIDIndex="1"} 1
+baumStatsNodeAIDIndex{baumStatsNodeAIDIndex="2"} 2
+# HELP baumStatsNodeAIDNodeID Node ID for used a_id - 1.3.6.1.4.1.91919191.1.3.10.2.1.2
+# TYPE baumStatsNodeAIDNodeID counter
+baumStatsNodeAIDNodeID{baumStatsNodeAIDIndex="1"} 1
+baumStatsNodeAIDNodeID{baumStatsNodeAIDIndex="2"} 2
+# HELP baumStatsNodeAIDUsedAID used a_id - 1.3.6.1.4.1.91919191.1.3.10.2.1.3
+# TYPE baumStatsNodeAIDUsedAID counter
+baumStatsNodeAIDUsedAID{baumStatsNodeAIDIndex="1"} 5
+baumStatsNodeAIDUsedAID{baumStatsNodeAIDIndex="2"} 1
+# HELP baumStatsNodeCPUCount Node CPU count - 1.3.6.1.4.1.91919191.1.3.7.2.1.5
+# TYPE baumStatsNodeCPUCount counter
+baumStatsNodeCPUCount{baumStatsNodeIndex="1"} 2
+baumStatsNodeCPUCount{baumStatsNodeIndex="2"} 2
+# HELP baumStatsNodeCPUCurrentTemperature Current temperature cpu of node stats - 1.3.6.1.4.1.91919191.1.3.7.3.1.3
+# TYPE baumStatsNodeCPUCurrentTemperature counter
+baumStatsNodeCPUCurrentTemperature{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 42
+baumStatsNodeCPUCurrentTemperature{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 39
+baumStatsNodeCPUCurrentTemperature{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 52
+baumStatsNodeCPUCurrentTemperature{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 50
+# HELP baumStatsNodeCPUIndex Index cpu of node stats - 1.3.6.1.4.1.91919191.1.3.7.3.1.1
+# TYPE baumStatsNodeCPUIndex gauge
+baumStatsNodeCPUIndex{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeCPUIndex{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeCPUIndex{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 2
+baumStatsNodeCPUIndex{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 2
+# HELP baumStatsNodeCPULoad Node CPU load - 1.3.6.1.4.1.91919191.1.3.7.2.1.4
+# TYPE baumStatsNodeCPULoad counter
+baumStatsNodeCPULoad{baumStatsNodeIndex="1"} 84
+baumStatsNodeCPULoad{baumStatsNodeIndex="2"} 68
+# HELP baumStatsNodeCPULowerCritical Lower critical temperature cpu of node stats - 1.3.6.1.4.1.91919191.1.3.7.3.1.7
+# TYPE baumStatsNodeCPULowerCritical counter
+baumStatsNodeCPULowerCritical{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeCPULowerCritical{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeCPULowerCritical{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 0
+baumStatsNodeCPULowerCritical{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 0
+# HELP baumStatsNodeCPULowerNonCritical Lower non critical temperature cpu of node stats - 1.3.6.1.4.1.91919191.1.3.7.3.1.6
+# TYPE baumStatsNodeCPULowerNonCritical counter
+baumStatsNodeCPULowerNonCritical{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeCPULowerNonCritical{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeCPULowerNonCritical{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 0
+baumStatsNodeCPULowerNonCritical{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 0
+# HELP baumStatsNodeCPUName Name cpu of node - 1.3.6.1.4.1.91919191.1.3.7.3.1.2
+# TYPE baumStatsNodeCPUName gauge
+baumStatsNodeCPUName{baumStatsNodeCPUIndex="1",baumStatsNodeCPUName="CPU1",baumStatsNodeIndex="1"} 1
+baumStatsNodeCPUName{baumStatsNodeCPUIndex="1",baumStatsNodeCPUName="CPU1",baumStatsNodeIndex="2"} 1
+baumStatsNodeCPUName{baumStatsNodeCPUIndex="2",baumStatsNodeCPUName="CPU0",baumStatsNodeIndex="1"} 1
+baumStatsNodeCPUName{baumStatsNodeCPUIndex="2",baumStatsNodeCPUName="CPU0",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeCPUStatus cpu node status (temperature) - 1.3.6.1.4.1.91919191.1.3.7.3.1.8
+# TYPE baumStatsNodeCPUStatus counter
+baumStatsNodeCPUStatus{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeCPUStatus{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeCPUStatus{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 1
+baumStatsNodeCPUStatus{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeCPUUpperCriticalTemperature Upper critical temperature cpu of node stats - 1.3.6.1.4.1.91919191.1.3.7.3.1.4
+# TYPE baumStatsNodeCPUUpperCriticalTemperature counter
+baumStatsNodeCPUUpperCriticalTemperature{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 101
+baumStatsNodeCPUUpperCriticalTemperature{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 101
+baumStatsNodeCPUUpperCriticalTemperature{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 101
+baumStatsNodeCPUUpperCriticalTemperature{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 101
+# HELP baumStatsNodeCPUUpperNonRecoverable Upper non recoverable temperature cpu of node stats - 1.3.6.1.4.1.91919191.1.3.7.3.1.5
+# TYPE baumStatsNodeCPUUpperNonRecoverable counter
+baumStatsNodeCPUUpperNonRecoverable{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeCPUUpperNonRecoverable{baumStatsNodeCPUIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeCPUUpperNonRecoverable{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="1"} 0
+baumStatsNodeCPUUpperNonRecoverable{baumStatsNodeCPUIndex="2",baumStatsNodeIndex="2"} 0
+# HELP baumStatsNodeCoolerCount Node cooler count - 1.3.6.1.4.1.91919191.1.3.7.2.1.6
+# TYPE baumStatsNodeCoolerCount counter
+baumStatsNodeCoolerCount{baumStatsNodeIndex="1"} 4
+baumStatsNodeCoolerCount{baumStatsNodeIndex="2"} 4
+# HELP baumStatsNodeCoolerIndex Index cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.1
+# TYPE baumStatsNodeCoolerIndex gauge
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 2
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 2
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 3
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 3
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 4
+baumStatsNodeCoolerIndex{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 4
+# HELP baumStatsNodeCoolerLowerCriticalRPM Lower critical speed cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.5
+# TYPE baumStatsNodeCoolerLowerCriticalRPM counter
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 500
+baumStatsNodeCoolerLowerCriticalRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 500
+# HELP baumStatsNodeCoolerLowerNonRecoverableRPM Lower non recoverable speed cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.6
+# TYPE baumStatsNodeCoolerLowerNonRecoverableRPM counter
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 300
+baumStatsNodeCoolerLowerNonRecoverableRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 300
+# HELP baumStatsNodeCoolerName Name cooler of node - 1.3.6.1.4.1.91919191.1.3.7.4.1.2
+# TYPE baumStatsNodeCoolerName gauge
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="1",baumStatsNodeCoolerName="FAN4",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="1",baumStatsNodeCoolerName="FAN4",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="2",baumStatsNodeCoolerName="FAN3",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="2",baumStatsNodeCoolerName="FAN3",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="3",baumStatsNodeCoolerName="FAN2",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="3",baumStatsNodeCoolerName="FAN2",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="4",baumStatsNodeCoolerName="FAN1",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerName{baumStatsNodeCoolerIndex="4",baumStatsNodeCoolerName="FAN1",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeCoolerRPM Speed cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.4
+# TYPE baumStatsNodeCoolerRPM counter
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 12400
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 13600
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 12300
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 13500
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 12300
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 13500
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 12300
+baumStatsNodeCoolerRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 13600
+# HELP baumStatsNodeCoolerStatus Status cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.3
+# TYPE baumStatsNodeCoolerStatus counter
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 1
+baumStatsNodeCoolerStatus{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeCoolerUpperCriticalRPM Upper critical speed cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.7
+# TYPE baumStatsNodeCoolerUpperCriticalRPM counter
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperCriticalRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 0
+# HELP baumStatsNodeCoolerUpperNonCriticalRPM Upper non critical speed cooler of node stats - 1.3.6.1.4.1.91919191.1.3.7.4.1.8
+# TYPE baumStatsNodeCoolerUpperNonCriticalRPM counter
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="2",baumStatsNodeIndex="2"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="3",baumStatsNodeIndex="2"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="1"} 0
+baumStatsNodeCoolerUpperNonCriticalRPM{baumStatsNodeCoolerIndex="4",baumStatsNodeIndex="2"} 0
+# HELP baumStatsNodeCount Count of node - 1.3.6.1.4.1.91919191.1.3.7.1
+# TYPE baumStatsNodeCount counter
+baumStatsNodeCount 2
+# HELP baumStatsNodeEthernetDataReceivingRate Data receiving rate (b/s) - 1.3.6.1.4.1.91919191.1.3.7.9.1.7
+# TYPE baumStatsNodeEthernetDataReceivingRate counter
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 23368
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 4696
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 450288
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 1.611112e+07
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 1712
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 1856
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 10544
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 278888
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 476720
+baumStatsNodeEthernetDataReceivingRate{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 1.611216e+07
+# HELP baumStatsNodeEthernetDataTransmittingRate Data transmitting rate (b/s) - 1.3.6.1.4.1.91919191.1.3.7.9.1.8
+# TYPE baumStatsNodeEthernetDataTransmittingRate counter
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 86872
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 1.6104928e+07
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 465496
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 1904
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 1712
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 1.760096e+06
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 1.6307424e+07
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 112
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 1.611652e+07
+baumStatsNodeEthernetDataTransmittingRate{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 466792
+# HELP baumStatsNodeEthernetLinkSpeed Eth link max speed (Mb/s) - 1.3.6.1.4.1.91919191.1.3.7.9.1.6
+# TYPE baumStatsNodeEthernetLinkSpeed counter
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 1000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 1000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 0
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 25000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 25000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 25000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 25000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 10000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 10000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 10000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 10000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 50000
+baumStatsNodeEthernetLinkSpeed{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 50000
+# HELP baumStatsNodeEthernetLinkStatus Eth link status - 1.3.6.1.4.1.91919191.1.3.7.9.1.4
+# TYPE baumStatsNodeEthernetLinkStatus counter
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 2
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 2
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 2
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 2
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetLinkStatus{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 6
+# HELP baumStatsNodeEthernetPortCount Eth port total count - 1.3.6.1.4.1.91919191.1.3.7.2.1.13
+# TYPE baumStatsNodeEthernetPortCount counter
+baumStatsNodeEthernetPortCount{baumStatsNodeIndex="1"} 8
+baumStatsNodeEthernetPortCount{baumStatsNodeIndex="2"} 8
+# HELP baumStatsNodeEthernetPortIndex Index - 1.3.6.1.4.1.91919191.1.3.7.9.1.1
+# TYPE baumStatsNodeEthernetPortIndex gauge
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 2
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 2
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 3
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 3
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 4
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 4
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 5
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 5
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 7
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 7
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 8
+baumStatsNodeEthernetPortIndex{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 8
+# HELP baumStatsNodeEthernetPortName Eth port name - 1.3.6.1.4.1.91919191.1.3.7.9.1.2
+# TYPE baumStatsNodeEthernetPortName gauge
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="1",baumStatsNodeEthernetPortName="ens83f0np0",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="1",baumStatsNodeEthernetPortName="ens83f0np0",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="2",baumStatsNodeEthernetPortName="enp2s0",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="2",baumStatsNodeEthernetPortName="enp2s0",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="3",baumStatsNodeEthernetPortName="ens83f1np1",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="3",baumStatsNodeEthernetPortName="ens83f1np1",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="4",baumStatsNodeEthernetPortName="ens7f0",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="4",baumStatsNodeEthernetPortName="ens7f0",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="5",baumStatsNodeEthernetPortName="ens7f1",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="5",baumStatsNodeEthernetPortName="ens7f1",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="6",baumStatsNodeEthernetPortName="ens2f0",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="6",baumStatsNodeEthernetPortName="ens2f0",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="7",baumStatsNodeEthernetPortName="ens2f1",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="7",baumStatsNodeEthernetPortName="ens2f1",baumStatsNodeIndex="2"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="8",baumStatsNodeEthernetPortName="bond1",baumStatsNodeIndex="1"} 1
+baumStatsNodeEthernetPortName{baumStatsNodeEthernetPortIndex="8",baumStatsNodeEthernetPortName="bond1",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeEthernetPortSpeed Eth port max speed (Mb/s) - 1.3.6.1.4.1.91919191.1.3.7.9.1.5
+# TYPE baumStatsNodeEthernetPortSpeed counter
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 10000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 10000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 1000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 1000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 10000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 10000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 25000
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 0
+baumStatsNodeEthernetPortSpeed{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 0
+# HELP baumStatsNodeEthernetPortStatus Eth port status - 1.3.6.1.4.1.91919191.1.3.7.9.1.3
+# TYPE baumStatsNodeEthernetPortStatus counter
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="1"} 2
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="1",baumStatsNodeIndex="2"} 2
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="2",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="1"} 2
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="3",baumStatsNodeIndex="2"} 2
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="4",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="5",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="6",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="7",baumStatsNodeIndex="2"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="1"} 6
+baumStatsNodeEthernetPortStatus{baumStatsNodeEthernetPortIndex="8",baumStatsNodeIndex="2"} 6
+# HELP baumStatsNodeFCPortCount Node fc port count - 1.3.6.1.4.1.91919191.1.3.7.2.1.10
+# TYPE baumStatsNodeFCPortCount counter
+baumStatsNodeFCPortCount{baumStatsNodeIndex="1"} 2
+baumStatsNodeFCPortCount{baumStatsNodeIndex="2"} 2
+# HELP baumStatsNodeFCPortIndex Index fc port of node stats - 1.3.6.1.4.1.91919191.1.3.7.8.1.1
+# TYPE baumStatsNodeFCPortIndex gauge
+baumStatsNodeFCPortIndex{baumStatsNodeFCPortIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortIndex{baumStatsNodeFCPortIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeFCPortIndex{baumStatsNodeFCPortIndex="2",baumStatsNodeIndex="1"} 2
+baumStatsNodeFCPortIndex{baumStatsNodeFCPortIndex="2",baumStatsNodeIndex="2"} 2
+# HELP baumStatsNodeFCPortLink Link fc port of node - 1.3.6.1.4.1.91919191.1.3.7.8.1.4
+# TYPE baumStatsNodeFCPortLink counter
+baumStatsNodeFCPortLink{baumStatsNodeFCPortIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortLink{baumStatsNodeFCPortIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeFCPortLink{baumStatsNodeFCPortIndex="2",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortLink{baumStatsNodeFCPortIndex="2",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeFCPortName Name fc port of node - 1.3.6.1.4.1.91919191.1.3.7.8.1.2
+# TYPE baumStatsNodeFCPortName gauge
+baumStatsNodeFCPortName{baumStatsNodeFCPortIndex="1",baumStatsNodeFCPortName="51:40:2e:c0:17:33:8e:09",baumStatsNodeIndex="2"} 1
+baumStatsNodeFCPortName{baumStatsNodeFCPortIndex="1",baumStatsNodeFCPortName="51:40:2e:c0:17:33:b2:b9",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortName{baumStatsNodeFCPortIndex="2",baumStatsNodeFCPortName="51:40:2e:c0:17:33:8e:08",baumStatsNodeIndex="2"} 1
+baumStatsNodeFCPortName{baumStatsNodeFCPortIndex="2",baumStatsNodeFCPortName="51:40:2e:c0:17:33:b2:b8",baumStatsNodeIndex="1"} 1
+# HELP baumStatsNodeFCPortSpeed Speed fc port of node - 1.3.6.1.4.1.91919191.1.3.7.8.1.5
+# TYPE baumStatsNodeFCPortSpeed gauge
+baumStatsNodeFCPortSpeed{baumStatsNodeFCPortIndex="1",baumStatsNodeFCPortSpeed="32 Gbit",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortSpeed{baumStatsNodeFCPortIndex="1",baumStatsNodeFCPortSpeed="32 Gbit",baumStatsNodeIndex="2"} 1
+baumStatsNodeFCPortSpeed{baumStatsNodeFCPortIndex="2",baumStatsNodeFCPortSpeed="32 Gbit",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortSpeed{baumStatsNodeFCPortIndex="2",baumStatsNodeFCPortSpeed="32 Gbit",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeFCPortStatus Status fc port of node - 1.3.6.1.4.1.91919191.1.3.7.8.1.3
+# TYPE baumStatsNodeFCPortStatus counter
+baumStatsNodeFCPortStatus{baumStatsNodeFCPortIndex="1",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortStatus{baumStatsNodeFCPortIndex="1",baumStatsNodeIndex="2"} 1
+baumStatsNodeFCPortStatus{baumStatsNodeFCPortIndex="2",baumStatsNodeIndex="1"} 1
+baumStatsNodeFCPortStatus{baumStatsNodeFCPortIndex="2",baumStatsNodeIndex="2"} 1
+# HELP baumStatsNodeIndex Index of node stats - 1.3.6.1.4.1.91919191.1.3.7.2.1.1
+# TYPE baumStatsNodeIndex gauge
+baumStatsNodeIndex{baumStatsNodeIndex="1"} 1
+baumStatsNodeIndex{baumStatsNodeIndex="2"} 2
+# HELP baumStatsNodeName Name of node - 1.3.6.1.4.1.91919191.1.3.7.2.1.2
+# TYPE baumStatsNodeName gauge
+baumStatsNodeName{baumStatsNodeIndex="1",baumStatsNodeName="1"} 1
+baumStatsNodeName{baumStatsNodeIndex="2",baumStatsNodeName="2"} 1
+# HELP baumStatsNodePSUCount Node psu count - 1.3.6.1.4.1.91919191.1.3.7.2.1.7
+# TYPE baumStatsNodePSUCount counter
+baumStatsNodePSUCount{baumStatsNodeIndex="1"} 2
+baumStatsNodePSUCount{baumStatsNodeIndex="2"} 2
+# HELP baumStatsNodePSUCurrentTemperature Temperature psu of node - 1.3.6.1.4.1.91919191.1.3.7.5.1.4
+# TYPE baumStatsNodePSUCurrentTemperature counter
+baumStatsNodePSUCurrentTemperature{baumStatsNodeIndex="1",baumStatsNodePSUIndex="1"} 0
+baumStatsNodePSUCurrentTemperature{baumStatsNodeIndex="1",baumStatsNodePSUIndex="2"} 0
+baumStatsNodePSUCurrentTemperature{baumStatsNodeIndex="2",baumStatsNodePSUIndex="1"} 0
+baumStatsNodePSUCurrentTemperature{baumStatsNodeIndex="2",baumStatsNodePSUIndex="2"} 0
+# HELP baumStatsNodePSUIndex Index psu of node stats - 1.3.6.1.4.1.91919191.1.3.7.5.1.1
+# TYPE baumStatsNodePSUIndex gauge
+baumStatsNodePSUIndex{baumStatsNodeIndex="1",baumStatsNodePSUIndex="1"} 1
+baumStatsNodePSUIndex{baumStatsNodeIndex="1",baumStatsNodePSUIndex="2"} 2
+baumStatsNodePSUIndex{baumStatsNodeIndex="2",baumStatsNodePSUIndex="1"} 1
+baumStatsNodePSUIndex{baumStatsNodeIndex="2",baumStatsNodePSUIndex="2"} 2
+# HELP baumStatsNodePSUName Name psu of node - 1.3.6.1.4.1.91919191.1.3.7.5.1.2
+# TYPE baumStatsNodePSUName gauge
+baumStatsNodePSUName{baumStatsNodeIndex="1",baumStatsNodePSUIndex="1",baumStatsNodePSUName="PSU2"} 1
+baumStatsNodePSUName{baumStatsNodeIndex="1",baumStatsNodePSUIndex="2",baumStatsNodePSUName="PSU1"} 1
+baumStatsNodePSUName{baumStatsNodeIndex="2",baumStatsNodePSUIndex="1",baumStatsNodePSUName="PSU2"} 1
+baumStatsNodePSUName{baumStatsNodeIndex="2",baumStatsNodePSUIndex="2",baumStatsNodePSUName="PSU1"} 1
+# HELP baumStatsNodePSUStatus Name psu of node - 1.3.6.1.4.1.91919191.1.3.7.5.1.3
+# TYPE baumStatsNodePSUStatus counter
+baumStatsNodePSUStatus{baumStatsNodeIndex="1",baumStatsNodePSUIndex="1"} 1
+baumStatsNodePSUStatus{baumStatsNodeIndex="1",baumStatsNodePSUIndex="2"} 1
+baumStatsNodePSUStatus{baumStatsNodeIndex="2",baumStatsNodePSUIndex="1"} 1
+baumStatsNodePSUStatus{baumStatsNodeIndex="2",baumStatsNodePSUIndex="2"} 1
+# HELP baumStatsNodePSUUpperCriticalTemperature Upper critical temperature psu of node - 1.3.6.1.4.1.91919191.1.3.7.5.1.5
+# TYPE baumStatsNodePSUUpperCriticalTemperature counter
+baumStatsNodePSUUpperCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodePSUIndex="1"} 0
+baumStatsNodePSUUpperCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodePSUIndex="2"} 0
+baumStatsNodePSUUpperCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodePSUIndex="1"} 0
+baumStatsNodePSUUpperCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodePSUIndex="2"} 0
+# HELP baumStatsNodePSUUpperNonRecoverableTemperature Upper non recoverable temperature psu of node - 1.3.6.1.4.1.91919191.1.3.7.5.1.6
+# TYPE baumStatsNodePSUUpperNonRecoverableTemperature counter
+baumStatsNodePSUUpperNonRecoverableTemperature{baumStatsNodeIndex="1",baumStatsNodePSUIndex="1"} 0
+baumStatsNodePSUUpperNonRecoverableTemperature{baumStatsNodeIndex="1",baumStatsNodePSUIndex="2"} 0
+baumStatsNodePSUUpperNonRecoverableTemperature{baumStatsNodeIndex="2",baumStatsNodePSUIndex="1"} 0
+baumStatsNodePSUUpperNonRecoverableTemperature{baumStatsNodeIndex="2",baumStatsNodePSUIndex="2"} 0
+# HELP baumStatsNodeSASBackplaneCount Node sas backplane count - 1.3.6.1.4.1.91919191.1.3.7.2.1.8
+# TYPE baumStatsNodeSASBackplaneCount counter
+baumStatsNodeSASBackplaneCount{baumStatsNodeIndex="1"} 3
+baumStatsNodeSASBackplaneCount{baumStatsNodeIndex="2"} 3
+# HELP baumStatsNodeSASBackplaneHighCriticalTemperature High critical temperature sas backplane of node stats - 1.3.6.1.4.1.91919191.1.3.7.6.1.6
+# TYPE baumStatsNodeSASBackplaneHighCriticalTemperature counter
+baumStatsNodeSASBackplaneHighCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 55
+baumStatsNodeSASBackplaneHighCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 55
+baumStatsNodeSASBackplaneHighCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 55
+baumStatsNodeSASBackplaneHighCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 55
+baumStatsNodeSASBackplaneHighCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 55
+baumStatsNodeSASBackplaneHighCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 55
+# HELP baumStatsNodeSASBackplaneHighWarningTemperature High warning temperature sas backplane of node stats - 1.3.6.1.4.1.91919191.1.3.7.6.1.8
+# TYPE baumStatsNodeSASBackplaneHighWarningTemperature counter
+baumStatsNodeSASBackplaneHighWarningTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 50
+baumStatsNodeSASBackplaneHighWarningTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 50
+baumStatsNodeSASBackplaneHighWarningTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 50
+baumStatsNodeSASBackplaneHighWarningTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 50
+baumStatsNodeSASBackplaneHighWarningTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 50
+baumStatsNodeSASBackplaneHighWarningTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 50
+# HELP baumStatsNodeSASBackplaneIndex Index sas backplane of node stats - 1.3.6.1.4.1.91919191.1.3.7.6.1.1
+# TYPE baumStatsNodeSASBackplaneIndex gauge
+baumStatsNodeSASBackplaneIndex{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 1
+baumStatsNodeSASBackplaneIndex{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 2
+baumStatsNodeSASBackplaneIndex{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 3
+baumStatsNodeSASBackplaneIndex{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 1
+baumStatsNodeSASBackplaneIndex{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 2
+baumStatsNodeSASBackplaneIndex{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 3
+# HELP baumStatsNodeSASBackplaneLowCriticalTemperature Low critical temperature sas backplane of node stats - 1.3.6.1.4.1.91919191.1.3.7.6.1.5
+# TYPE baumStatsNodeSASBackplaneLowCriticalTemperature counter
+baumStatsNodeSASBackplaneLowCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 0
+baumStatsNodeSASBackplaneLowCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 0
+baumStatsNodeSASBackplaneLowCriticalTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 0
+baumStatsNodeSASBackplaneLowCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 0
+baumStatsNodeSASBackplaneLowCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 0
+baumStatsNodeSASBackplaneLowCriticalTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 0
+# HELP baumStatsNodeSASBackplaneLowWarningTemperature Low warning temperature sas backplane of node stats - 1.3.6.1.4.1.91919191.1.3.7.6.1.7
+# TYPE baumStatsNodeSASBackplaneLowWarningTemperature counter
+baumStatsNodeSASBackplaneLowWarningTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 0
+baumStatsNodeSASBackplaneLowWarningTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 0
+baumStatsNodeSASBackplaneLowWarningTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 0
+baumStatsNodeSASBackplaneLowWarningTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 0
+baumStatsNodeSASBackplaneLowWarningTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 0
+baumStatsNodeSASBackplaneLowWarningTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 0
+# HELP baumStatsNodeSASBackplaneName Name sas backplane of node - 1.3.6.1.4.1.91919191.1.3.7.6.1.2
+# TYPE baumStatsNodeSASBackplaneName gauge
+baumStatsNodeSASBackplaneName{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1",baumStatsNodeSASBackplaneName="TempSense00"} 1
+baumStatsNodeSASBackplaneName{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2",baumStatsNodeSASBackplaneName="TempSense01"} 1
+baumStatsNodeSASBackplaneName{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3",baumStatsNodeSASBackplaneName="TempSense02"} 1
+baumStatsNodeSASBackplaneName{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1",baumStatsNodeSASBackplaneName="TempSense00"} 1
+baumStatsNodeSASBackplaneName{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2",baumStatsNodeSASBackplaneName="TempSense01"} 1
+baumStatsNodeSASBackplaneName{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3",baumStatsNodeSASBackplaneName="TempSense02"} 1
+# HELP baumStatsNodeSASBackplaneStatus Status sas backplane of node - 1.3.6.1.4.1.91919191.1.3.7.6.1.3
+# TYPE baumStatsNodeSASBackplaneStatus counter
+baumStatsNodeSASBackplaneStatus{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 1
+baumStatsNodeSASBackplaneStatus{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 1
+baumStatsNodeSASBackplaneStatus{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 1
+baumStatsNodeSASBackplaneStatus{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 1
+baumStatsNodeSASBackplaneStatus{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 1
+baumStatsNodeSASBackplaneStatus{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 1
+# HELP baumStatsNodeSASBackplaneTemperature Temperature sas backplane of node stats - 1.3.6.1.4.1.91919191.1.3.7.6.1.4
+# TYPE baumStatsNodeSASBackplaneTemperature counter
+baumStatsNodeSASBackplaneTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="1"} 23
+baumStatsNodeSASBackplaneTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="2"} 29
+baumStatsNodeSASBackplaneTemperature{baumStatsNodeIndex="1",baumStatsNodeSASBackplaneIndex="3"} 22
+baumStatsNodeSASBackplaneTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="1"} 23
+baumStatsNodeSASBackplaneTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="2"} 29
+baumStatsNodeSASBackplaneTemperature{baumStatsNodeIndex="2",baumStatsNodeSASBackplaneIndex="3"} 22
+# HELP baumStatsNodeSASPortCount Node sas port count - 1.3.6.1.4.1.91919191.1.3.7.2.1.9
+# TYPE baumStatsNodeSASPortCount counter
+baumStatsNodeSASPortCount{baumStatsNodeIndex="1"} 11
+baumStatsNodeSASPortCount{baumStatsNodeIndex="2"} 11
+# HELP baumStatsNodeSASPortIndex Index sas port of node stats - 1.3.6.1.4.1.91919191.1.3.7.7.1.1
+# TYPE baumStatsNodeSASPortIndex gauge
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="1"} 1
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="10"} 10
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="11"} 11
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="2"} 2
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="3"} 3
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="4"} 4
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="5"} 5
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="6"} 6
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="7"} 7
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="8"} 8
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="9"} 9
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="1"} 1
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="10"} 10
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="11"} 11
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="2"} 2
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="3"} 3
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="4"} 4
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="5"} 5
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="6"} 6
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="7"} 7
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="8"} 8
+baumStatsNodeSASPortIndex{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="9"} 9
+# HELP baumStatsNodeSASPortName Name sas port of node - 1.3.6.1.4.1.91919191.1.3.7.7.1.2
+# TYPE baumStatsNodeSASPortName gauge
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="1",baumStatsNodeSASPortName="port_1"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="10",baumStatsNodeSASPortName="port_10"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="11",baumStatsNodeSASPortName="port_11"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="2",baumStatsNodeSASPortName="port_2"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="3",baumStatsNodeSASPortName="port_3"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="4",baumStatsNodeSASPortName="port_4"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="5",baumStatsNodeSASPortName="port_5"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="6",baumStatsNodeSASPortName="port_6"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="7",baumStatsNodeSASPortName="port_7"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="8",baumStatsNodeSASPortName="port_8"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="9",baumStatsNodeSASPortName="port_9"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="1",baumStatsNodeSASPortName="port_1"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="10",baumStatsNodeSASPortName="port_10"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="11",baumStatsNodeSASPortName="port_11"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="2",baumStatsNodeSASPortName="port_2"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="3",baumStatsNodeSASPortName="port_3"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="4",baumStatsNodeSASPortName="port_4"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="5",baumStatsNodeSASPortName="port_5"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="6",baumStatsNodeSASPortName="port_6"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="7",baumStatsNodeSASPortName="port_7"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="8",baumStatsNodeSASPortName="port_8"} 1
+baumStatsNodeSASPortName{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="9",baumStatsNodeSASPortName="port_9"} 1
+# HELP baumStatsNodeSASPortStatus Status sas port of node - 1.3.6.1.4.1.91919191.1.3.7.7.1.3
+# TYPE baumStatsNodeSASPortStatus counter
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="1"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="10"} 2
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="11"} 2
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="2"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="3"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="4"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="5"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="6"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="7"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="8"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="1",baumStatsNodeSASPortIndex="9"} 2
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="1"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="10"} 2
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="11"} 2
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="2"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="3"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="4"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="5"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="6"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="7"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="8"} 1
+baumStatsNodeSASPortStatus{baumStatsNodeIndex="2",baumStatsNodeSASPortIndex="9"} 2
+# HELP baumStatsNodeTotalRam Total RAM - 1.3.6.1.4.1.91919191.1.3.7.2.1.11
+# TYPE baumStatsNodeTotalRam counter
+baumStatsNodeTotalRam{baumStatsNodeIndex="1"} 515683
+baumStatsNodeTotalRam{baumStatsNodeIndex="2"} 515683
+# HELP baumStatsNodeUptime Uptime node - 1.3.6.1.4.1.91919191.1.3.7.2.1.3
+# TYPE baumStatsNodeUptime counter
+baumStatsNodeUptime{baumStatsNodeIndex="1"} 9.179163e+06
+baumStatsNodeUptime{baumStatsNodeIndex="2"} 9.179312e+06
+# HELP baumStatsNodeUsedRam Used RAM - 1.3.6.1.4.1.91919191.1.3.7.2.1.12
+# TYPE baumStatsNodeUsedRam counter
+baumStatsNodeUsedRam{baumStatsNodeIndex="1"} 10868
+baumStatsNodeUsedRam{baumStatsNodeIndex="2"} 9054
+# HELP baumStatsPoolsAllocated Allocated space of pool - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.5
+# TYPE baumStatsPoolsAllocated counter
+baumStatsPoolsAllocated{baumStatsPoolsIndex="1"} 8.23559979e+10
+baumStatsPoolsAllocated{baumStatsPoolsIndex="2"} 7.34439407616e+11
+# HELP baumStatsPoolsCount Count of pool stats - 1.3.6.1.4.1.91919191.1.3.6.2.1
+# TYPE baumStatsPoolsCount counter
+baumStatsPoolsCount 2
+# HELP baumStatsPoolsFragmentation Pool fragmentation - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.6
+# TYPE baumStatsPoolsFragmentation counter
+baumStatsPoolsFragmentation{baumStatsPoolsIndex="1"} 0
+baumStatsPoolsFragmentation{baumStatsPoolsIndex="2"} 3
+# HELP baumStatsPoolsFree Free space of pool - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.4
+# TYPE baumStatsPoolsFree counter
+baumStatsPoolsFree{baumStatsPoolsIndex="1"} 4.663745448948e+12
+baumStatsPoolsFree{baumStatsPoolsIndex="2"} 3.700823827188e+12
+# HELP baumStatsPoolsIndex Index of pool - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.1
+# TYPE baumStatsPoolsIndex gauge
+baumStatsPoolsIndex{baumStatsPoolsIndex="1"} 1
+baumStatsPoolsIndex{baumStatsPoolsIndex="2"} 2
+# HELP baumStatsPoolsName Name of pool - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.2
+# TYPE baumStatsPoolsName gauge
+baumStatsPoolsName{baumStatsPoolsIndex="1",baumStatsPoolsName="NFS_SSD_Pool"} 1
+baumStatsPoolsName{baumStatsPoolsIndex="2",baumStatsPoolsName="iSCSI_SSD_Pool"} 1
+# HELP baumStatsPoolsRead Read speed of pool (B/s) - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.7
+# TYPE baumStatsPoolsRead counter
+baumStatsPoolsRead{baumStatsPoolsIndex="1"} 8013
+baumStatsPoolsRead{baumStatsPoolsIndex="2"} 0
+# HELP baumStatsPoolsReadIOPS Read speed of pool (IO/s) - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.9
+# TYPE baumStatsPoolsReadIOPS counter
+baumStatsPoolsReadIOPS{baumStatsPoolsIndex="1"} 0
+baumStatsPoolsReadIOPS{baumStatsPoolsIndex="2"} 0
+# HELP baumStatsPoolsSize Size of pool - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.3
+# TYPE baumStatsPoolsSize counter
+baumStatsPoolsSize{baumStatsPoolsIndex="1"} 7.627861917696e+12
+baumStatsPoolsSize{baumStatsPoolsIndex="2"} 7.627861917696e+12
+# HELP baumStatsPoolsStatus Status of pool - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.11
+# TYPE baumStatsPoolsStatus counter
+baumStatsPoolsStatus{baumStatsPoolsIndex="1"} 1
+baumStatsPoolsStatus{baumStatsPoolsIndex="2"} 1
+# HELP baumStatsPoolsWrite Write speed of pool (B/s) - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.8
+# TYPE baumStatsPoolsWrite counter
+baumStatsPoolsWrite{baumStatsPoolsIndex="1"} 688328
+baumStatsPoolsWrite{baumStatsPoolsIndex="2"} 1602
+# HELP baumStatsPoolsWriteIOPS Write speed of pool (IO/s) - 1.3.6.1.4.1.91919191.1.3.6.2.2.1.10
+# TYPE baumStatsPoolsWriteIOPS counter
+baumStatsPoolsWriteIOPS{baumStatsPoolsIndex="1"} 129
+baumStatsPoolsWriteIOPS{baumStatsPoolsIndex="2"} 0
+# HELP baumStatsUsedDiskCount Count of used disk stats - 1.3.6.1.4.1.91919191.1.3.6.3.1
+# TYPE baumStatsUsedDiskCount counter
+baumStatsUsedDiskCount 8
+# HELP baumStatsUsedDiskIndex Index of used disk stats - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.1
+# TYPE baumStatsUsedDiskIndex gauge
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="1"} 1
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="2"} 2
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="3"} 3
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="4"} 4
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="5"} 5
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="6"} 6
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="7"} 7
+baumStatsUsedDiskIndex{baumStatsUsedDiskIndex="8"} 8
+# HELP baumStatsUsedDiskName Name of used disk - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.2
+# TYPE baumStatsUsedDiskName gauge
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="1",baumStatsUsedDiskName="358ce38ee21ef54f1"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="2",baumStatsUsedDiskName="358ce38ee21ef5505"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="3",baumStatsUsedDiskName="35002538b7350f5f0"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="4",baumStatsUsedDiskName="35002538b7350fa80"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="5",baumStatsUsedDiskName="35002538b7350fa90"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="6",baumStatsUsedDiskName="35002538b7350fa40"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="7",baumStatsUsedDiskName="35002538b7350eb50"} 1
+baumStatsUsedDiskName{baumStatsUsedDiskIndex="8",baumStatsUsedDiskName="35002538b7350fa70"} 1
+# HELP baumStatsUsedDiskReadBW Reading used data from disk - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.3
+# TYPE baumStatsUsedDiskReadBW counter
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="1"} 256386
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="2"} 256386
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="3"} 256385
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="4"} 256386
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="5"} 256386
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="6"} 256386
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="7"} 256386
+baumStatsUsedDiskReadBW{baumStatsUsedDiskIndex="8"} 256386
+# HELP baumStatsUsedDiskReadIO Reading IO - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.5
+# TYPE baumStatsUsedDiskReadIO counter
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="1"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="2"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="3"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="4"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="5"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="6"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="7"} 1
+baumStatsUsedDiskReadIO{baumStatsUsedDiskIndex="8"} 1
+# HELP baumStatsUsedDiskReadWait Read waiting - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.7
+# TYPE baumStatsUsedDiskReadWait counter
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="1"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="2"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="3"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="4"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="5"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="6"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="7"} 0
+baumStatsUsedDiskReadWait{baumStatsUsedDiskIndex="8"} 0
+# HELP baumStatsUsedDiskWriteBW Write data to used disk - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.4
+# TYPE baumStatsUsedDiskWriteBW counter
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="1"} 253982
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="2"} 264398
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="3"} 266000
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="4"} 248374
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="5"} 59289
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="6"} 55283
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="7"} 64897
+baumStatsUsedDiskWriteBW{baumStatsUsedDiskIndex="8"} 64096
+# HELP baumStatsUsedDiskWriteIO Write IO - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.6
+# TYPE baumStatsUsedDiskWriteIO counter
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="1"} 46
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="2"} 46
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="3"} 45
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="4"} 44
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="5"} 12
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="6"} 12
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="7"} 13
+baumStatsUsedDiskWriteIO{baumStatsUsedDiskIndex="8"} 13
+# HELP baumStatsUsedDiskWriteWait Write waiting - 1.3.6.1.4.1.91919191.1.3.6.3.2.1.8
+# TYPE baumStatsUsedDiskWriteWait counter
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="1"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="2"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="3"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="4"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="5"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="6"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="7"} 0
+baumStatsUsedDiskWriteWait{baumStatsUsedDiskIndex="8"} 0
+# HELP baumStatsZvolsCount Count of zvols stats - 1.3.6.1.4.1.91919191.1.3.6.4.1
+# TYPE baumStatsZvolsCount counter
+baumStatsZvolsCount 8
+# HELP baumStatsZvolsIndex Index of zvol - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.1
+# TYPE baumStatsZvolsIndex gauge
+baumStatsZvolsIndex{baumStatsZvolsIndex="1"} 1
+baumStatsZvolsIndex{baumStatsZvolsIndex="2"} 2
+baumStatsZvolsIndex{baumStatsZvolsIndex="3"} 3
+baumStatsZvolsIndex{baumStatsZvolsIndex="4"} 4
+baumStatsZvolsIndex{baumStatsZvolsIndex="5"} 5
+baumStatsZvolsIndex{baumStatsZvolsIndex="6"} 6
+baumStatsZvolsIndex{baumStatsZvolsIndex="7"} 7
+baumStatsZvolsIndex{baumStatsZvolsIndex="8"} 8
+# HELP baumStatsZvolsLogicalused Logicalused by volume - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.10
+# TYPE baumStatsZvolsLogicalused gauge
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="1",baumStatsZvolsLogicalused="54865557504"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="2",baumStatsZvolsLogicalused="54885509120"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="3",baumStatsZvolsLogicalused="109902530560"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="4",baumStatsZvolsLogicalused="99685308416"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="5",baumStatsZvolsLogicalused="36730247168"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="6",baumStatsZvolsLogicalused="13007534080"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="7",baumStatsZvolsLogicalused="93094213632"} 1
+baumStatsZvolsLogicalused{baumStatsZvolsIndex="8",baumStatsZvolsLogicalused="26624"} 1
+# HELP baumStatsZvolsName Name of zvol - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.2
+# TYPE baumStatsZvolsName gauge
+baumStatsZvolsName{baumStatsZvolsIndex="1",baumStatsZvolsName="NFS_SSD_Pool/ROSA_NEW_HE"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="2",baumStatsZvolsName="iSCSI_SSD_Pool/ROSA"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="3",baumStatsZvolsName="iSCSI_SSD_Pool/ROSA_VMStore"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="4",baumStatsZvolsName="iSCSI_SSD_Pool/rosa4"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="5",baumStatsZvolsName="iSCSI_SSD_Pool/rosa5"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="6",baumStatsZvolsName="iSCSI_SSD_Pool/rosa6"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="7",baumStatsZvolsName="iSCSI_SSD_Pool/rosa8"} 1
+baumStatsZvolsName{baumStatsZvolsIndex="8",baumStatsZvolsName="iSCSI_SSD_Pool/test03"} 1
+# HELP baumStatsZvolsReadBW Reading data from zvol - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.3
+# TYPE baumStatsZvolsReadBW counter
+baumStatsZvolsReadBW{baumStatsZvolsIndex="1"} 607313
+baumStatsZvolsReadBW{baumStatsZvolsIndex="2"} 0
+baumStatsZvolsReadBW{baumStatsZvolsIndex="3"} 0
+baumStatsZvolsReadBW{baumStatsZvolsIndex="4"} 0
+baumStatsZvolsReadBW{baumStatsZvolsIndex="5"} 0
+baumStatsZvolsReadBW{baumStatsZvolsIndex="6"} 0
+baumStatsZvolsReadBW{baumStatsZvolsIndex="7"} 801
+baumStatsZvolsReadBW{baumStatsZvolsIndex="8"} 0
+# HELP baumStatsZvolsReadIO Reading IO - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.5
+# TYPE baumStatsZvolsReadIO counter
+baumStatsZvolsReadIO{baumStatsZvolsIndex="1"} 19
+baumStatsZvolsReadIO{baumStatsZvolsIndex="2"} 0
+baumStatsZvolsReadIO{baumStatsZvolsIndex="3"} 0
+baumStatsZvolsReadIO{baumStatsZvolsIndex="4"} 0
+baumStatsZvolsReadIO{baumStatsZvolsIndex="5"} 0
+baumStatsZvolsReadIO{baumStatsZvolsIndex="6"} 0
+baumStatsZvolsReadIO{baumStatsZvolsIndex="7"} 0
+baumStatsZvolsReadIO{baumStatsZvolsIndex="8"} 0
+# HELP baumStatsZvolsReadWait Read waiting - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.7
+# TYPE baumStatsZvolsReadWait counter
+baumStatsZvolsReadWait{baumStatsZvolsIndex="1"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="2"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="3"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="4"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="5"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="6"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="7"} 0
+baumStatsZvolsReadWait{baumStatsZvolsIndex="8"} 0
+# HELP baumStatsZvolsRefreservation Volume reserve on pool - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.11
+# TYPE baumStatsZvolsRefreservation gauge
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="1",baumStatsZvolsRefreservation="0"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="2",baumStatsZvolsRefreservation="0"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="3",baumStatsZvolsRefreservation="0"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="4",baumStatsZvolsRefreservation="214748364800"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="5",baumStatsZvolsRefreservation="570460209152"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="6",baumStatsZvolsRefreservation="0"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="7",baumStatsZvolsRefreservation="0"} 1
+baumStatsZvolsRefreservation{baumStatsZvolsIndex="8",baumStatsZvolsRefreservation="11411390464"} 1
+# HELP baumStatsZvolsUsedbydataset Used space by dataset - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.12
+# TYPE baumStatsZvolsUsedbydataset gauge
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="1",baumStatsZvolsUsedbydataset="59823063936"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="2",baumStatsZvolsUsedbydataset="59844943488"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="3",baumStatsZvolsUsedbydataset="119921110272"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="4",baumStatsZvolsUsedbydataset="145456487808"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="5",baumStatsZvolsUsedbydataset="53478862848"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="6",baumStatsZvolsUsedbydataset="18979642368"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="7",baumStatsZvolsUsedbydataset="135734270784"} 1
+baumStatsZvolsUsedbydataset{baumStatsZvolsIndex="8",baumStatsZvolsUsedbydataset="83328"} 1
+# HELP baumStatsZvolsUsedbysnapshots Used space by snapshots - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.13
+# TYPE baumStatsZvolsUsedbysnapshots gauge
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="1",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="2",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="3",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="4",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="5",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="6",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="7",baumStatsZvolsUsedbysnapshots="0"} 1
+baumStatsZvolsUsedbysnapshots{baumStatsZvolsIndex="8",baumStatsZvolsUsedbysnapshots="0"} 1
+# HELP baumStatsZvolsVolsize Volsize by volume - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.9
+# TYPE baumStatsZvolsVolsize gauge
+baumStatsZvolsVolsize{baumStatsZvolsIndex="1",baumStatsZvolsVolsize="107374182400"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="2",baumStatsZvolsVolsize="536870912000"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="3",baumStatsZvolsVolsize="536870912000"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="4",baumStatsZvolsVolsize="214748364800"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="5",baumStatsZvolsVolsize="536870912000"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="6",baumStatsZvolsVolsize="12884901888"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="7",baumStatsZvolsVolsize="429496729600"} 1
+baumStatsZvolsVolsize{baumStatsZvolsIndex="8",baumStatsZvolsVolsize="10737418240"} 1
+# HELP baumStatsZvolsWriteBW Write data to zvol - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.4
+# TYPE baumStatsZvolsWriteBW counter
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="1"} 16925
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="2"} 0
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="3"} 0
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="4"} 0
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="5"} 0
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="6"} 0
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="7"} 0
+baumStatsZvolsWriteBW{baumStatsZvolsIndex="8"} 0
+# HELP baumStatsZvolsWriteIO Write IO - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.6
+# TYPE baumStatsZvolsWriteIO counter
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="1"} 1
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="2"} 0
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="3"} 0
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="4"} 0
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="5"} 0
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="6"} 0
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="7"} 0
+baumStatsZvolsWriteIO{baumStatsZvolsIndex="8"} 0
+# HELP baumStatsZvolsWriteWait Write waiting - 1.3.6.1.4.1.91919191.1.3.6.4.2.1.8
+# TYPE baumStatsZvolsWriteWait counter
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="1"} 1
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="2"} 0
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="3"} 0
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="4"} 0
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="5"} 0
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="6"} 0
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="7"} 0
+baumStatsZvolsWriteWait{baumStatsZvolsIndex="8"} 0
+# HELP snmp_scrape_duration_seconds Total SNMP time scrape took (walk and processing).
+# TYPE snmp_scrape_duration_seconds gauge
+snmp_scrape_duration_seconds{module="baum"} 0.286877642
+# HELP snmp_scrape_packets_retried Packets retried for get, bulkget, and walk.
+# TYPE snmp_scrape_packets_retried gauge
+snmp_scrape_packets_retried{module="baum"} 0
+# HELP snmp_scrape_packets_sent Packets sent for get, bulkget, and walk; including retries.
+# TYPE snmp_scrape_packets_sent gauge
+snmp_scrape_packets_sent{module="baum"} 30
+# HELP snmp_scrape_pdus_returned PDUs returned from get, bulkget, and walk.
+# TYPE snmp_scrape_pdus_returned gauge
+snmp_scrape_pdus_returned{module="baum"} 747
+# HELP snmp_scrape_walk_duration_seconds Time SNMP walk/bulkwalk took.
+# TYPE snmp_scrape_walk_duration_seconds gauge
+snmp_scrape_walk_duration_seconds{module="baum"} 0.278789572

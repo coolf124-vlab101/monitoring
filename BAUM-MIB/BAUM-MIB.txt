@@ -1,0 +1,1804 @@
+BAUM-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    NOTIFICATION-TYPE, OBJECT-TYPE, MODULE-IDENTITY,
+    enterprises, Integer32, Counter32, Counter64, IpAddress
+        FROM SNMPv2-SMI
+    NOTIFICATION-GROUP
+        FROM SNMPv2-CONF
+    TEXTUAL-CONVENTION, DisplayString, RowStatus
+        FROM SNMPv2-TC;
+
+baum MODULE-IDENTITY
+    LAST-UPDATED "202302210000Z"
+    ORGANIZATION "NPO Baum JSC"
+    CONTACT-INFO
+            "baum@baumlab.pro"
+    DESCRIPTION
+            "The MIB module describes objects of BAUM storage."
+    REVISION     "202302210000Z"
+    DESCRIPTION
+            "Initial revision"
+    ::= { enterprises 91919191 }                                            --.1.3.6.1.4.1.91919191
+
+DisplayString ::= OCTET STRING
+
+SimpleIndex ::= TEXTUAL-CONVENTION
+    DISPLAY-HINT "d"
+    STATUS       current
+    DESCRIPTION
+            "A unique value for reference table indexes"
+    SYNTAX       Integer32 (0..2147483647)
+
+baumProduct             OBJECT IDENTIFIER ::= { baum 1 }                    --.1.3.6.1.4.1.91919191.1
+baumParameter           OBJECT IDENTIFIER ::= { baumProduct 3 }             --.1.3.6.1.4.1.91919191.1.3
+
+baumStats               OBJECT IDENTIFIER ::= { baumParameter 6 }           --.1.3.6.1.4.1.91919191.1.3.6
+baumStatsNode           OBJECT IDENTIFIER ::= { baumParameter 7 }           --.1.3.6.1.4.1.91919191.1.3.7
+baumStatsJbod           OBJECT IDENTIFIER ::= { baumParameter 8 }           --.1.3.6.1.4.1.91919191.1.3.8
+baumStatsDisks          OBJECT IDENTIFIER ::= { baumParameter 9 }           --.1.3.6.1.4.1.91919191.1.3.9
+baumStatsNodeAID        OBJECT IDENTIFIER ::= { baumParameter 10 }           --.1.3.6.1.4.1.91919191.1.3.10
+
+baumStatsCommon         OBJECT IDENTIFIER ::= { baumStats 1 }               --.1.3.6.1.4.1.91919191.1.3.6.1
+baumStatsPools          OBJECT IDENTIFIER ::= { baumStats 2 }               --.1.3.6.1.4.1.91919191.1.3.6.2
+baumStatsUsedDisk       OBJECT IDENTIFIER ::= { baumStats 3 }               --.1.3.6.1.4.1.91919191.1.3.6.3
+baumStatsZvols          OBJECT IDENTIFIER ::= { baumStats 4 }               --.1.3.6.1.4.1.91919191.1.3.6.4
+baumStatsFC             OBJECT IDENTIFIER ::= { baumStats 5 }               --.1.3.6.1.4.1.91919191.1.3.6.5
+
+baumStatsCommonCacheReadBack OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read back of cache (B/s)"
+    ::= { baumStatsCommon 3 }
+
+baumStatsCommonCacheWriteBack OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write back of cache (B/s)"
+    ::= { baumStatsCommon 4 }
+
+baumStatsCommonCacheL1Hit OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "L1 cache hit in percent"
+    ::= { baumStatsCommon 1 }
+
+baumStatsCommonCacheL2Hit OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "L2 cache hit in percent"
+    ::= { baumStatsCommon 2 }
+
+baumStatsUsedDiskCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of used disk stats"
+    ::= { baumStatsUsedDisk 1 }
+
+baumStatsUsedDiskTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsUsedDiskEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of used disk stats"
+    ::= { baumStatsUsedDisk 2 }
+
+baumStatsUsedDiskEntry OBJECT-TYPE
+    SYNTAX      BaumStatsUsedDiskEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of used disk stats table"
+    INDEX { baumStatsUsedDiskIndex }
+    ::= { baumStatsUsedDiskTable 1 }
+
+BaumStatsUsedDiskEntry ::= SEQUENCE {
+    baumStatsUsedDiskIndex
+        SimpleIndex,
+    baumStatsUsedDiskName
+        DisplayString,
+    baumStatsUsedDiskReadBW
+        Counter64,
+    baumStatsUsedDiskWriteBW
+        Counter64,
+    baumStatsUsedDiskReadIO
+        Counter64,
+    baumStatsUsedDiskWriteIO
+        Counter64,
+    baumStatsUsedDiskReadWait
+        Counter64,
+    baumStatsUsedDiskWriteWait
+        Counter64
+}
+
+baumStatsUsedDiskIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of used disk stats"
+    ::= { baumStatsUsedDiskEntry 1 }
+
+baumStatsUsedDiskName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..31))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of used disk"
+    ::= { baumStatsUsedDiskEntry 2 }
+
+baumStatsUsedDiskReadBW OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Reading used data from disk"
+    ::= { baumStatsUsedDiskEntry 3 }
+
+baumStatsUsedDiskWriteBW OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write data to used disk"
+    ::= { baumStatsUsedDiskEntry 4 }
+
+baumStatsUsedDiskReadIO OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Reading IO"
+    ::= { baumStatsUsedDiskEntry 5 }
+
+baumStatsUsedDiskWriteIO OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write IO"
+    ::= { baumStatsUsedDiskEntry 6 }
+
+baumStatsUsedDiskReadWait OBJECT-TYPE
+    SYNTAX       Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read waiting"
+    ::= { baumStatsUsedDiskEntry 7 }
+
+baumStatsUsedDiskWriteWait OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write waiting"
+    ::= { baumStatsUsedDiskEntry 8 }
+
+baumStatsPoolsCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of pool stats"
+    ::= { baumStatsPools 1 }
+
+baumStatsPoolsTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsPoolsEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of pools stats"
+    ::= { baumStatsPools 2 }
+
+baumStatsPoolsEntry OBJECT-TYPE
+    SYNTAX      BaumStatsPoolsEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of pool stats table"
+    INDEX { baumStatsPoolsIndex }
+    ::= { baumStatsPoolsTable 1 }
+
+BaumStatsPoolsEntry ::= SEQUENCE {
+    baumStatsPoolsIndex
+        SimpleIndex,
+    baumStatsPoolsName
+        DisplayString,
+    baumStatsPoolsSize
+        Counter64,
+    baumStatsPoolsFree
+        Counter64,
+    baumStatsPoolsAllocated
+        Counter64,
+    baumStatsPoolsFragmentation
+        Counter64,
+    baumStatsPoolsRead
+        Counter64,
+    baumStatsPoolsWrite
+        Counter64,
+    baumStatsPoolsReadIOPS
+        Counter64,
+    baumStatsPoolsWriteIOPS
+        Counter64,
+    baumStatsPoolsStatus
+        Counter64
+}
+
+baumStatsPoolsIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of pool"
+    ::= { baumStatsPoolsEntry 1 }
+
+baumStatsPoolsName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..31))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of pool"
+    ::= { baumStatsPoolsEntry 2 }
+
+baumStatsPoolsSize OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Size of pool"
+    ::= { baumStatsPoolsEntry 3 }
+
+baumStatsPoolsFree OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Free space of pool"
+    ::= { baumStatsPoolsEntry 4 }
+
+baumStatsPoolsAllocated OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Allocated space of pool"
+    ::= { baumStatsPoolsEntry 5 }
+
+baumStatsPoolsFragmentation OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Pool fragmentation"
+    ::= { baumStatsPoolsEntry 6 }
+
+baumStatsPoolsRead OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read speed of pool (B/s)"
+    ::= { baumStatsPoolsEntry 7 }
+
+baumStatsPoolsWrite OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write speed of pool (B/s)"
+    ::= { baumStatsPoolsEntry 8 }
+
+baumStatsPoolsReadIOPS OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read speed of pool (IO/s)"
+    ::= { baumStatsPoolsEntry 9 }
+
+baumStatsPoolsWriteIOPS OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write speed of pool (IO/s)"
+    ::= { baumStatsPoolsEntry 10 }
+
+baumStatsPoolsStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status of pool"
+    ::= { baumStatsPoolsEntry 11 }
+
+baumStatsZvolsCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of zvols stats"
+    ::= { baumStatsZvols 1 }
+
+baumStatsZvolsTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsZvolsEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of zvols stats"
+    ::= { baumStatsZvols 2 }
+
+baumStatsZvolsEntry OBJECT-TYPE
+    SYNTAX      BaumStatsZvolsEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of zvols stats table"
+    INDEX { baumStatsZvolsIndex }
+    ::= { baumStatsZvolsTable 1 }
+
+BaumStatsZvolsEntry ::= SEQUENCE {
+    baumStatsZvolsIndex
+        SimpleIndex,
+    baumStatsZvolsName
+        DisplayString,
+    baumStatsZvolsReadBW
+        Counter64,
+    baumStatsZvolsWriteBW
+        Counter64,
+    baumStatsZvolsReadIO
+        Counter64,
+    baumStatsZvolsWriteIO
+        Counter64,
+    baumStatsZvolsReadWait
+        Counter64,
+    baumStatsZvolsWriteWait
+        Counter64,
+    baumStatsZvolsVolsize
+        DisplayString,
+    baumStatsZvolsLogicalused
+        DisplayString,
+    baumStatsZvolsRefreservation
+        DisplayString
+    baumStatsZvolsUsedbydataset
+        DisplayString,
+    baumStatsZvolsUsedbysnapshots
+        DisplayString
+}
+
+baumStatsZvolsIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of zvol"
+    ::= { baumStatsZvolsEntry 1 }
+
+baumStatsZvolsName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..254))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of zvol"
+    ::= { baumStatsZvolsEntry 2 }
+
+baumStatsZvolsReadBW OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Reading data from zvol"
+    ::= { baumStatsZvolsEntry 3 }
+
+baumStatsZvolsWriteBW OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write data to zvol"
+    ::= { baumStatsZvolsEntry 4 }
+
+baumStatsZvolsReadIO OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Reading IO"
+    ::= { baumStatsZvolsEntry 5 }
+
+baumStatsZvolsWriteIO OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write IO"
+    ::= { baumStatsZvolsEntry 6 }
+
+baumStatsZvolsReadWait OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read waiting"
+    ::= { baumStatsZvolsEntry 7 }
+
+baumStatsZvolsWriteWait OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write waiting"
+    ::= { baumStatsZvolsEntry 8 }
+
+baumStatsZvolsVolsize OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..254))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Volsize by volume"
+    ::= { baumStatsZvolsEntry 9 }
+
+baumStatsZvolsLogicalused OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..254))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Logicalused by volume"
+    ::= { baumStatsZvolsEntry 10 }
+
+baumStatsZvolsRefreservation OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..254))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Volume reserve on pool"
+    ::= { baumStatsZvolsEntry 11 }
+
+baumStatsZvolsUsedbydataset OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..254))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Used space by dataset"
+    ::= { baumStatsZvolsEntry 12 }
+
+baumStatsZvolsUsedbysnapshots OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..254))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Used space by snapshots"
+    ::= { baumStatsZvolsEntry 13 }
+
+-- START FC PARENT
+
+baumStatsFCCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of FC stats"
+    ::= { baumStatsFC 1 }
+
+baumStatsFCTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsFCEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of FC stats"
+    ::= { baumStatsFC 2 }
+
+baumStatsFCEntry OBJECT-TYPE
+    SYNTAX      BaumStatsFCEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of FC stats table"
+    INDEX { baumStatsFCIndex }
+    ::= { baumStatsFCTable 1 }
+
+BaumStatsFCEntry ::= SEQUENCE {
+    baumStatsFCIndex
+        SimpleIndex,
+    baumStatsFCTarget
+        DisplayString,
+    baumStatsFCRead
+        Counter64,
+    baumStatsFCWrite
+        Counter64,
+    baumStatsFCReadIOPS
+        Counter64,
+    baumStatsFCWriteIOPS
+        Counter64,
+    baumStatsFCInitiatorCount
+        Counter64
+}
+
+baumStatsFCIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of FC"
+    ::= { baumStatsFCEntry 1 }
+
+baumStatsFCTarget OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Target of FC"
+    ::= { baumStatsFCEntry 2 }
+
+baumStatsFCRead OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read speed of FC (B/s)"
+    ::= { baumStatsFCEntry 3 }
+
+baumStatsFCWrite OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write speed of FC (B/s)"
+    ::= { baumStatsFCEntry 4 }
+
+baumStatsFCReadIOPS OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read speed of FC (IO/s)"
+    ::= { baumStatsFCEntry 5 }
+
+baumStatsFCWriteIOPS OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write speed of FC (IO/s)"
+    ::= { baumStatsFCEntry 6 }
+
+baumStatsFCInitiatorCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count initiator of FC stats"
+    ::= { baumStatsFCEntry 7 }
+
+-- END FC PARENT
+
+-- START FC CHILD
+
+baumStatsFCInitiatorTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsFCInitiatorEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table initiator of FC stats"
+    ::= { baumStatsFC 3 }
+
+baumStatsFCInitiatorEntry OBJECT-TYPE
+    SYNTAX      BaumStatsFCInitiatorEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry initiator of FC stats table"
+    INDEX { baumStatsFCIndex,
+            baumStatsFCInitiatorIndex }
+    ::= { baumStatsFCInitiatorTable 1 }
+
+BaumStatsFCInitiatorEntry ::= SEQUENCE {
+    baumStatsFCInitiatorIndex
+        SimpleIndex,
+    baumStatsFCInitiatorName
+        DisplayString,
+    baumStatsFCInitiatorRead
+        Counter64,
+    baumStatsFCInitiatorWrite
+        Counter64,
+    baumStatsFCInitiatorReadIOPS
+        Counter64,
+    baumStatsFCInitiatorWriteIOPS
+        Counter64
+}
+
+baumStatsFCInitiatorIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index initiator of FC"
+    ::= { baumStatsFCInitiatorEntry 1 }
+
+baumStatsFCInitiatorName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of initiator"
+    ::= { baumStatsFCInitiatorEntry 2 }
+
+baumStatsFCInitiatorRead OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read speed initiator of FC (B/s)"
+    ::= { baumStatsFCInitiatorEntry 3 }
+
+baumStatsFCInitiatorWrite OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write speed initiator of FC (B/s)"
+    ::= { baumStatsFCInitiatorEntry 4 }
+
+baumStatsFCInitiatorReadIOPS OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Read speed initiator of FC (IO/s)"
+    ::= { baumStatsFCInitiatorEntry 5 }
+
+baumStatsFCInitiatorWriteIOPS OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Write speed initiator of FC (IO/s)"
+    ::= { baumStatsFCInitiatorEntry 6 }
+
+baumStatsNodeCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of node"
+    ::= { baumStatsNode 1 }
+
+baumStatsNodeTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of node"
+    ::= { baumStatsNode 2 }
+
+baumStatsNodeEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of node table"
+    INDEX { baumStatsNodeIndex }
+    ::= { baumStatsNodeTable 1 }
+
+-- START HW STATS PARENT
+
+BaumStatsNodeEntry ::= SEQUENCE {
+    baumStatsNodeIndex
+        SimpleIndex,
+    baumStatsNodeName
+        DisplayString,
+    baumStatsNodeUptime
+        Counter64,
+    baumStatsNodeCPULoad
+        Counter64,
+    baumStatsNodeCPUCount
+        Counter64,
+    baumStatsNodeCoolerCount
+        Counter64,
+    baumStatsNodePSUCount
+        Counter64,
+    baumStatsNodeSASBackplaneCount
+        Counter64,
+    baumStatsNodeSASPortCount
+        Counter64,
+    baumStatsNodeFCPortCount
+        Counter64,
+    baumStatsNodeTotalRam
+        Counter64,
+    baumStatsNodeUsedRam
+        Counter64,
+    baumStatsNodeEthernetPortCount
+        Counter64
+}
+
+baumStatsNodeIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of node stats"
+    ::= { baumStatsNodeEntry 1 }
+
+baumStatsNodeName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of node"
+    ::= { baumStatsNodeEntry 2 }
+
+baumStatsNodeUptime OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Uptime node"
+    ::= { baumStatsNodeEntry 3 }
+
+baumStatsNodeCPULoad OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node CPU load"
+    ::= { baumStatsNodeEntry 4 }
+
+baumStatsNodeCPUCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node CPU count"
+    ::= { baumStatsNodeEntry 5 }
+
+baumStatsNodeCoolerCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node cooler count"
+    ::= { baumStatsNodeEntry 6 }
+
+baumStatsNodePSUCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node psu count"
+    ::= { baumStatsNodeEntry 7 }
+
+baumStatsNodeSASBackplaneCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node sas backplane count"
+    ::= { baumStatsNodeEntry 8 }
+
+baumStatsNodeSASPortCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node sas port count"
+    ::= { baumStatsNodeEntry 9 }
+
+baumStatsNodeFCPortCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node fc port count"
+    ::= { baumStatsNodeEntry 10 }
+
+baumStatsNodeTotalRam OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Total RAM"
+    ::= { baumStatsNodeEntry 11 }
+
+baumStatsNodeUsedRam OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Used RAM"
+    ::= { baumStatsNodeEntry 12 }
+
+baumStatsNodeEthernetPortCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Eth port total count"
+    ::= { baumStatsNodeEntry 13 }
+
+-- END HW STATS PARENT
+
+-- START HW STATS CPU CHILD
+
+baumStatsNodeCPUTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeCPUEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table CPU of node stats"
+    ::= { baumStatsNode 3 }
+
+baumStatsNodeCPUEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeCPUEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry CPU of node stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodeCPUIndex }
+    ::= { baumStatsNodeCPUTable 1 }
+
+BaumStatsNodeCPUEntry ::= SEQUENCE {
+    baumStatsNodeCPUIndex
+        SimpleIndex,
+    baumStatsNodeCPUName
+        DisplayString,
+    baumStatsNodeCPUCurrentTemperature
+        Counter64,
+    baumStatsNodeCPUUpperCriticalTemperature
+        Counter64,
+    baumStatsNodeCPUUpperNonRecoverable
+        Counter64,
+    baumStatsNodeCPULowerNonCritical
+        Counter64,
+    baumStatsNodeCPULowerCritical
+        Counter64,
+    baumStatsNodeCPUStatus
+        Counter64
+}
+
+baumStatsNodeCPUIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index cpu of node stats"
+    ::= { baumStatsNodeCPUEntry 1 }
+
+baumStatsNodeCPUName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name cpu of node"
+    ::= { baumStatsNodeCPUEntry 2 }
+
+baumStatsNodeCPUCurrentTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Current temperature cpu of node stats"
+    ::= { baumStatsNodeCPUEntry 3 }
+
+baumStatsNodeCPUUpperCriticalTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Upper critical temperature cpu of node stats"
+    ::= { baumStatsNodeCPUEntry 4 }
+
+baumStatsNodeCPUUpperNonRecoverable OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Upper non recoverable temperature cpu of node stats"
+    ::= { baumStatsNodeCPUEntry 5 }
+
+baumStatsNodeCPULowerNonCritical OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Lower non critical temperature cpu of node stats"
+    ::= { baumStatsNodeCPUEntry 6 }
+
+baumStatsNodeCPULowerCritical OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Lower critical temperature cpu of node stats"
+    ::= { baumStatsNodeCPUEntry 7 }
+
+baumStatsNodeCPUStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "cpu node status (temperature)"
+    ::= { baumStatsNodeCPUEntry 8 }
+
+-- END CPU CHILD
+
+-- START COOLER CHILD
+
+baumStatsNodeCoolerTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeCoolerEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table cooler of node stats"
+    ::= { baumStatsNode 4 }
+
+baumStatsNodeCoolerEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeCoolerEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry cooler of node stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodeCoolerIndex }
+    ::= { baumStatsNodeCoolerTable 1 }
+
+BaumStatsNodeCoolerEntry ::= SEQUENCE {
+    baumStatsNodeCoolerIndex
+        SimpleIndex,
+    baumStatsNodeCoolerName
+        DisplayString,
+    baumStatsNodeCoolerStatus
+        Counter64,
+    baumStatsNodeCoolerRPM
+        Counter64,
+    baumStatsNodeCoolerLowerCriticalRPM
+        Counter64,
+    baumStatsNodeCoolerLowerNonRecoverableRPM
+        Counter64,
+    baumStatsNodeCoolerUpperCriticalRPM
+        Counter64,
+    baumStatsNodeCoolerUpperNonCriticalRPM
+        Counter64
+}
+
+baumStatsNodeCoolerIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 1 }
+
+baumStatsNodeCoolerName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name cooler of node"
+    ::= { baumStatsNodeCoolerEntry 2 }
+
+baumStatsNodeCoolerStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 3 }
+
+baumStatsNodeCoolerRPM OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Speed cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 4 }
+
+baumStatsNodeCoolerLowerCriticalRPM OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Lower critical speed cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 5 }
+
+baumStatsNodeCoolerLowerNonRecoverableRPM OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Lower non recoverable speed cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 6 }
+
+baumStatsNodeCoolerUpperCriticalRPM OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Upper critical speed cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 7 }
+
+baumStatsNodeCoolerUpperNonCriticalRPM OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Upper non critical speed cooler of node stats"
+    ::= { baumStatsNodeCoolerEntry 8 }
+
+-- END COOLER CHILD
+
+-- START PSU CHILD
+
+baumStatsNodePSUTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodePSUEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table psu of node stats"
+    ::= { baumStatsNode 5 }
+
+baumStatsNodePSUEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodePSUEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry psu of node stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodePSUIndex }
+    ::= { baumStatsNodePSUTable 1 }
+
+BaumStatsNodePSUEntry ::= SEQUENCE {
+    baumStatsNodePSUIndex
+        SimpleIndex,
+    baumStatsNodePSUName
+        DisplayString,
+    baumStatsNodePSUStatus
+        Counter64,
+    baumStatsNodePSUCurrentTemperature
+        Counter64,
+    baumStatsNodePSUUpperCriticalTemperature
+        Counter64,
+    baumStatsNodePSUUpperNonRecoverableTemperature
+        Counter64
+}
+
+baumStatsNodePSUIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index psu of node stats"
+    ::= { baumStatsNodePSUEntry 1 }
+
+baumStatsNodePSUName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name psu of node"
+    ::= { baumStatsNodePSUEntry 2 }
+
+baumStatsNodePSUStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name psu of node"
+    ::= { baumStatsNodePSUEntry 3 }
+
+baumStatsNodePSUCurrentTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Temperature psu of node"
+    ::= { baumStatsNodePSUEntry 4 }
+
+baumStatsNodePSUUpperCriticalTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Upper critical temperature psu of node"
+    ::= { baumStatsNodePSUEntry 5 }
+
+baumStatsNodePSUUpperNonRecoverableTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Upper non recoverable temperature psu of node"
+    ::= { baumStatsNodePSUEntry 6 }
+
+-- END PSU CHILD
+
+-- START SAS BACKPLANE CHILD
+
+baumStatsNodeSASBackplaneTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeSASBackplaneEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table sas backplane of node stats"
+    ::= { baumStatsNode 6 }
+
+baumStatsNodeSASBackplaneEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeSASBackplaneEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry sas backplane of node stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodeSASBackplaneIndex }
+    ::= { baumStatsNodeSASBackplaneTable 1 }
+
+BaumStatsNodeSASBackplaneEntry ::= SEQUENCE {
+    baumStatsNodeSASBackplaneIndex
+        SimpleIndex,
+    baumStatsNodeSASBackplaneName
+        DisplayString,
+    baumStatsNodeSASBackplaneStatus
+        Counter64,
+    baumStatsNodeSASBackplaneTemperature
+        Counter64,
+    baumStatsNodeSASBackplaneLowCriticalTemperature
+        Counter64,
+    baumStatsNodeSASBackplaneHighCriticalTemperature
+        Counter64,
+    baumStatsNodeSASBackplaneLowWarningTemperature
+        Counter64,
+    baumStatsNodeSASBackplaneHighWarningTemperature
+        Counter64
+}
+
+baumStatsNodeSASBackplaneIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index sas backplane of node stats"
+    ::= { baumStatsNodeSASBackplaneEntry 1 }
+
+baumStatsNodeSASBackplaneName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name sas backplane of node"
+    ::= { baumStatsNodeSASBackplaneEntry 2 }
+
+baumStatsNodeSASBackplaneStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status sas backplane of node"
+    ::= { baumStatsNodeSASBackplaneEntry 3 }
+
+baumStatsNodeSASBackplaneTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Temperature sas backplane of node stats"
+    ::= { baumStatsNodeSASBackplaneEntry 4 }
+
+baumStatsNodeSASBackplaneLowCriticalTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Low critical temperature sas backplane of node stats"
+    ::= { baumStatsNodeSASBackplaneEntry 5 }
+
+baumStatsNodeSASBackplaneHighCriticalTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "High critical temperature sas backplane of node stats"
+    ::= { baumStatsNodeSASBackplaneEntry 6 }
+
+baumStatsNodeSASBackplaneLowWarningTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Low warning temperature sas backplane of node stats"
+    ::= { baumStatsNodeSASBackplaneEntry 7 }
+
+baumStatsNodeSASBackplaneHighWarningTemperature OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "High warning temperature sas backplane of node stats"
+    ::= { baumStatsNodeSASBackplaneEntry 8 }
+
+-- END SAS BACKPLANE CHILD
+
+-- START SAS PORT CHILD
+
+baumStatsNodeSASPortTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeSASPortEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table sas port of node stats"
+    ::= { baumStatsNode 7 }
+
+baumStatsNodeSASPortEntry OBJECT-TYPE
+    SYNTAX  BaumStatsNodeSASPortEntry
+    MAX-ACCESS not-accessible
+    STATUS     current
+    DESCRIPTION
+        "Entry sas port of node stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodeSASPortIndex }
+    ::= { baumStatsNodeSASPortTable 1 }
+
+BaumStatsNodeSASPortEntry ::= SEQUENCE {
+    baumStatsNodeSASPortIndex
+        SimpleIndex,
+    baumStatsNodeSASPortName
+        DisplayString,
+    baumStatsNodeSASPortStatus
+        Counter64
+}
+
+baumStatsNodeSASPortIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index sas port of node stats"
+    ::= { baumStatsNodeSASPortEntry 1 }
+
+baumStatsNodeSASPortName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name sas port of node"
+    ::= { baumStatsNodeSASPortEntry 2 }
+
+baumStatsNodeSASPortStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status sas port of node"
+    ::= { baumStatsNodeSASPortEntry 3 }
+
+-- END SAS PORT CHILD
+
+-- START FC PORT CHILD
+
+baumStatsNodeFCPortTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeFCPortEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table fc port of node stats"
+    ::= { baumStatsNode 8 }
+
+baumStatsNodeFCPortEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeFCPortEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry fc port of node stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodeFCPortIndex }
+    ::= { baumStatsNodeFCPortTable 1 }
+
+BaumStatsNodeFCPortEntry ::= SEQUENCE {
+    baumStatsNodeFCPortIndex
+        SimpleIndex,
+    baumStatsNodeFCPortName
+        DisplayString,
+    baumStatsNodeFCPortStatus
+        Counter64,
+    baumStatsNodeFCPortLink
+        Counter64,
+    baumStatsNodeFCPortSpeed
+        DisplayString
+}
+
+baumStatsNodeFCPortIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index fc port of node stats"
+    ::= { baumStatsNodeFCPortEntry 1 }
+
+baumStatsNodeFCPortName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name fc port of node"
+    ::= { baumStatsNodeFCPortEntry 2 }
+
+baumStatsNodeFCPortStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status fc port of node"
+    ::= { baumStatsNodeFCPortEntry 3 }
+
+baumStatsNodeFCPortLink OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Link fc port of node"
+    ::= { baumStatsNodeFCPortEntry 4 }
+
+baumStatsNodeFCPortSpeed OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Speed fc port of node"
+    ::= { baumStatsNodeFCPortEntry 5 }
+
+-- END FC PORT CHILD
+
+-- START ETH PORT CHILD
+
+baumStatsNodeEthernetPortTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeEthernetPortEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Eth port stats table"
+    ::= { baumStatsNode 9 }
+
+baumStatsNodeEthernetPortEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeEthernetPortEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Eth port entry of stats table"
+    INDEX { baumStatsNodeIndex,
+            baumStatsNodeEthernetPortIndex }
+    ::= { baumStatsNodeEthernetPortTable 1 }
+
+BaumStatsNodeEthernetPortEntry ::= SEQUENCE {
+    baumStatsNodeEthernetPortIndex
+        SimpleIndex,
+    baumStatsNodeEthernetPortName
+        DisplayString,
+    baumStatsNodeEthernetPortStatus
+        Counter64,
+    baumStatsNodeEthernetLinkStatus
+        Counter64,
+    baumStatsNodeEthernetPortSpeed
+        Counter64,
+    baumStatsNodeEthernetLinkSpeed
+        Counter64,
+    baumStatsNodeEthernetDataReceivingRate
+        Counter64,
+    baumStatsNodeEthernetDataTransmittingRate
+        Counter64
+}
+
+baumStatsNodeEthernetPortIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index"
+    ::= { baumStatsNodeEthernetPortEntry 1 }
+
+baumStatsNodeEthernetPortName OBJECT-TYPE
+    SYNTAX     DisplayString (SIZE(1..64))
+    MAX-ACCESS read-only
+    STATUS     current
+    DESCRIPTION
+        "Eth port name"
+    ::= { baumStatsNodeEthernetPortEntry 2 }
+
+baumStatsNodeEthernetPortStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Eth port status"
+    ::= { baumStatsNodeEthernetPortEntry 3 }
+
+baumStatsNodeEthernetLinkStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Eth link status"
+    ::= { baumStatsNodeEthernetPortEntry 4 }
+
+baumStatsNodeEthernetPortSpeed OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Eth port max speed (Mb/s)"
+    ::= { baumStatsNodeEthernetPortEntry 5 }
+
+baumStatsNodeEthernetLinkSpeed OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Eth link max speed (Mb/s)"
+    ::= { baumStatsNodeEthernetPortEntry 6 }
+
+baumStatsNodeEthernetDataReceivingRate OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Data receiving rate (b/s)"
+    ::= { baumStatsNodeEthernetPortEntry 7 }
+
+baumStatsNodeEthernetDataTransmittingRate OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Data transmitting rate (b/s)"
+    ::= { baumStatsNodeEthernetPortEntry 8 }
+
+-- END ETH PORT CHILD
+
+-- START JBOD PARENT
+
+baumStatsJbodCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of shelves"
+    ::= { baumStatsJbod 1 }
+
+baumStatsJbodTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsJbodEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of shelves"
+    ::= { baumStatsJbod 2 }
+
+baumStatsJbodEntry OBJECT-TYPE
+    SYNTAX      BaumStatsJbodEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of shelves table"
+    INDEX { baumStatsJbodIndex }
+    ::= { baumStatsJbodTable 1 }
+
+BaumStatsJbodEntry ::= SEQUENCE {
+    baumStatsJbodIndex
+        SimpleIndex,
+    baumStatsJbodName
+        DisplayString,
+    baumStatsJbodCoolerCount
+        Counter64,
+    baumStatsJbodPSUCount
+        Counter64,
+    baumStatsJbodInternal
+        Counter64,
+    baumStatsJbodDiskCount
+        Counter64
+}
+
+baumStatsJbodIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of shelves"
+    ::= { baumStatsJbodEntry 1 }
+
+baumStatsJbodName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of shelves"
+    ::= { baumStatsJbodEntry 2 }
+
+baumStatsJbodCoolerCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of coolers in a shelf"
+    ::= { baumStatsJbodEntry 3 }
+
+baumStatsJbodPSUCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of psu in a shelf"
+    ::= { baumStatsJbodEntry 4 }
+
+baumStatsJbodInternal OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Internal or external shelf"
+    ::= { baumStatsJbodEntry 5 }
+
+baumStatsJbodDiskCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Number of disks in a shelf"
+    ::= { baumStatsJbodEntry 6 }
+
+-- END JBOD PARENT
+
+-- START JBOD COOLER CHILD
+
+baumStatsJbodCoolerTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsJbodCoolerEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of coolers in a shelf"
+    ::= { baumStatsJbod 3 }
+
+baumStatsJbodCoolerEntry OBJECT-TYPE
+    SYNTAX      BaumStatsJbodCoolerEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry Cooler of jbod stats table"
+    INDEX { baumStatsJbodIndex,
+            baumStatsJbodCoolerIndex }
+    ::= { baumStatsJbodCoolerTable 1 }
+
+BaumStatsJbodCoolerEntry ::= SEQUENCE {
+    baumStatsJbodCoolerIndex
+        SimpleIndex,
+    baumStatsJbodCoolerName
+        DisplayString,
+    baumStatsJbodCoolerStatus
+        Counter64,
+    baumStatsJbodCoolerRPM
+        Counter64
+}
+
+baumStatsJbodCoolerIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index cooler of jbod stats"
+    ::= { baumStatsJbodCoolerEntry 1 }
+
+baumStatsJbodCoolerName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name cooler of jbod"
+    ::= { baumStatsJbodCoolerEntry 2 }
+
+baumStatsJbodCoolerStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status cooler of jbod stats"
+    ::= { baumStatsJbodCoolerEntry 3 }
+
+baumStatsJbodCoolerRPM OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Speed cooler of jbod stats"
+    ::= { baumStatsJbodCoolerEntry 4 }
+
+-- END JBOD COOLER CHILD
+
+-- START JBOD PSU CHILD
+
+baumStatsJbodPSUTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsJbodPSUEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of psu in a shelf"
+    ::= { baumStatsJbod 4 }
+
+baumStatsJbodPSUEntry OBJECT-TYPE
+    SYNTAX      BaumStatsJbodPSUEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry psu of jbod stats table"
+    INDEX { baumStatsJbodIndex,
+            baumStatsJbodPSUIndex }
+    ::= { baumStatsJbodPSUTable 1 }
+
+BaumStatsJbodPSUEntry ::= SEQUENCE {
+    baumStatsJbodPSUIndex
+        SimpleIndex,
+    baumStatsJbodPSUName
+        DisplayString,
+    baumStatsJbodPSUStatus
+        Counter64
+}
+
+baumStatsJbodPSUIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index psu of jbod stats"
+    ::= { baumStatsJbodPSUEntry 1 }
+
+baumStatsJbodPSUName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..64))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name psu of jbod"
+    ::= { baumStatsJbodPSUEntry 2 }
+
+baumStatsJbodPSUStatus OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Status psu of jbod stats"
+    ::= { baumStatsJbodPSUEntry 3 }
+
+-- END JBOD PSU CHILD
+
+baumStatsDisksCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count of all disks"
+    ::= { baumStatsDisks 1 }
+
+baumStatsDisksTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsDisksEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of all disks"
+    ::= { baumStatsDisks 2 }
+
+baumStatsDisksEntry OBJECT-TYPE
+    SYNTAX      BaumStatsDisksEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of all disks table"
+    INDEX { baumStatsDisksIndex }
+    ::= { baumStatsDisksTable 1 }
+
+BaumStatsDisksEntry ::= SEQUENCE {
+    baumStatsDisksIndex
+        SimpleIndex,
+    baumStatsDisksName
+        DisplayString,
+    baumStatsDisksCurrentTemp
+        Counter64,
+    baumStatsDisksThresholdTemp
+        Counter64
+}
+
+baumStatsDisksIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of disk"
+    ::= { baumStatsDisksEntry 1 }
+
+baumStatsDisksName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..31))
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Name of disk"
+    ::= { baumStatsDisksEntry 2 }
+
+baumStatsDisksCurrentTemp OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Current temperature disk"
+    ::= { baumStatsDisksEntry 3 }
+
+baumStatsDisksThresholdTemp OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Threshold temperature disk"
+    ::= { baumStatsDisksEntry 4 }
+
+baumStatsNodeAIDCount OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Count node for used a_id"
+    ::= { baumStatsNodeAID 1 }
+
+baumStatsNodeAIDTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF BaumStatsNodeAIDEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Table of node for used a_id"
+    ::= { baumStatsNodeAID 2 }
+
+baumStatsNodeAIDEntry OBJECT-TYPE
+    SYNTAX      BaumStatsNodeAIDEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION
+        "Entry of table node for used a_id"
+    INDEX { baumStatsNodeAIDIndex }
+    ::= { baumStatsNodeAIDTable 1 }
+
+BaumStatsNodeAIDEntry ::= SEQUENCE {
+    baumStatsNodeAIDIndex
+        SimpleIndex,
+    baumStatsNodeAIDNodeID
+        Counter64,
+    baumStatsNodeAIDUsedAID
+        Counter64
+}
+
+baumStatsNodeAIDIndex OBJECT-TYPE
+    SYNTAX      SimpleIndex
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Index of node for used a_id"
+    ::= { baumStatsNodeAIDEntry 1 }
+
+baumStatsNodeAIDNodeID OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Node ID for used a_id"
+    ::= { baumStatsNodeAIDEntry 2 }
+
+baumStatsNodeAIDUsedAID OBJECT-TYPE
+    SYNTAX      Counter64
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "used a_id"
+    ::= { baumStatsNodeAIDEntry 3 }
+
+END

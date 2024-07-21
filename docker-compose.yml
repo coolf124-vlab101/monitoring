@@ -1,0 +1,67 @@
+version: '3.3'
+services:
+  
+  prometheus:
+    image: prom/prometheus:v2.45.3
+    extra_hosts:
+     - "baum_storage-01:192.168.104.210"
+    ports:
+      - '9090:9090'
+    volumes:
+      - prometheus_data:/prometheus
+      - ./prometheus/:/etc/prometheus/
+    command: # Передаем доп параметры в командной строке
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention=5y' # Задаем время хранения метрик в 1 день
+    networks:
+      - back_net
+  
+  snmp-exporter:
+    image: prom/snmp-exporter
+    ports:
+      - "9116:9116"
+    volumes:
+      - ./snmp_exporter/generator/snmp.yml:/etc/snmp_exporter/snmp.yml
+    networks:
+      - back_net
+  
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3110:3000"
+    networks:
+      - back_net
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    depends_on:
+      - prometheus
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: "admin" #${GF_SECURITY_ADMIN_PASSWORD}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+  alertmanager:
+    image: prom/alertmanager
+    ports:
+      - 9093:9093
+    volumes:
+      - ./alertmanager/:/etc/alertmanager/
+    restart: always
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+    deploy:
+      mode: global
+    networks:
+      back_net:
+        aliases:
+          - alertmanager
+
+volumes:
+  prometheus_data:
+  grafana_data:
+  
+networks:
+  back_net:
+  front_net:
+
